@@ -2,9 +2,9 @@
 {
     public class NumbersArrayTools
     {
-        private int _arraySize;
-        private int[,] _arr;
-        private int _padding;
+        private readonly int _arraySize;
+        private readonly int[,] _arr;
+        private readonly int _padding;
 
         public NumbersArrayTools(int arraySize, int[,] arr, int padding)
         {
@@ -13,7 +13,7 @@
             _padding = padding;
         }
 
-        public int findMin()
+        public int FindMin()
         {
             if (_arr.Length == 0)
             {
@@ -35,7 +35,7 @@
             return min;
         }
 
-        public int findMax()
+        public int FindMax()
         {
             if (_arr.Length == 0)
             {
@@ -57,13 +57,12 @@
             return max;
         }
 
-        public List<List<int>> findCordinates(int numberToCompare)
+        public List<List<int>> FindCordinates(int numberToCompare)
         {
             var list = new List<List<int>>();
 
             for (int col = 0; col < _arraySize; col++)
             {
-                //var tempList = new List<int>();
                 for (int row = 0; row < _arraySize; row++)
                 {
                     if (_arr[col, row] == numberToCompare)
@@ -76,7 +75,7 @@
             return list;
         }
 
-        public void printArray(int[,] arr)
+        public void PrintArray(int[,] arr)
         {
             var theCols = "COLS........" + new String(' ', _arraySize -10);
 
@@ -92,7 +91,7 @@
             }
         }
 
-        public int[,] sortTwoDimensionalArray()
+        public int[,] SortTwoDimensionalArray()
         {
             var listOfNumbers = new List<int>();
 
@@ -108,6 +107,7 @@
 
             int[,] arrayOfNumbers = new int[_arraySize, _arraySize];
             var incrementNum = 0;
+            
             for (int col = 0; col < _arraySize; col++)
             {
                 for (int row = 0; row < _arraySize; row++)
@@ -120,17 +120,17 @@
             return arrayOfNumbers;
         }
 
-        public void printMinAndMaxNumberCordinates(List<List<int>> minNumCords, List<List<int>> maxNumCords)
+        public void PrintMinAndMaxNumberCoordinates(List<List<int>> minNumCords, List<List<int>> maxNumCords)
         {
             Console.WriteLine();
-            Console.WriteLine("Min number cordinates! ([row, col])");
+            Console.WriteLine("Min number coordinates! ([row, col])");
             foreach (var item in minNumCords)
             {
                 Console.WriteLine("[" + String.Join(", ", item) + "]");
             }
 
             Console.WriteLine();
-            Console.WriteLine("Max number cordinates! ([row, col])");
+            Console.WriteLine("Max number coordinates! ([row, col])");
             foreach (var item in maxNumCords)
             {
                 Console.WriteLine("[" + String.Join(", ", item) + "]");
