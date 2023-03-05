@@ -28,6 +28,7 @@ arrayTools.PrintMinAndMaxNumberCoordinates(minNumCords, maxNumCords);
 
 Console.WriteLine("Sorted 2D array");
 arrayTools.PrintArray(sortedArray);
+Console.WriteLine("\n\n");
 
 int[,] CreateTwoDimensionalArray()
 {

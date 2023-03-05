@@ -67,7 +67,7 @@
                 {
                     if (_arr[col, row] == numberToCompare)
                     {
-                        list.Add(new List<int>() { row, col });
+                        list.Add(new List<int>() { col, row }); // row, col?
                     }
                 }
             }
@@ -77,9 +77,9 @@
 
         public void PrintArray(int[,] arr)
         {
-            var theCols = "COLS........" + new String(' ', _arraySize -10);
+            var theCols = "ROWS........" + new String(' ', _arraySize -10);
 
-            Console.Write("   ROWS........" + new String(' ', _arraySize - 10));
+            Console.Write("   COLS........" + new String(' ', _arraySize - 10));
             for (int col = 0; col < _arraySize; col++)
             {
                 Console.WriteLine();
@@ -123,14 +123,14 @@
         public void PrintMinAndMaxNumberCoordinates(List<List<int>> minNumCords, List<List<int>> maxNumCords)
         {
             Console.WriteLine();
-            Console.WriteLine("Min number coordinates! ([row, col])");
+            Console.WriteLine("Min number coordinates (0 based numbering) ! ([row, col])");
             foreach (var item in minNumCords)
             {
                 Console.WriteLine("[" + String.Join(", ", item) + "]");
             }
 
             Console.WriteLine();
-            Console.WriteLine("Max number coordinates! ([row, col])");
+            Console.WriteLine("Max number coordinates (0 based numbering) ! ([row, col])");
             foreach (var item in maxNumCords)
             {
                 Console.WriteLine("[" + String.Join(", ", item) + "]");
